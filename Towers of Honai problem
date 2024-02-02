@@ -1,0 +1,24 @@
+import java.util.Scanner; 
+public class TowersOfHanoi { 
+ static void towersOfHanoi(int disks, char source, char destination, 
+char auxiliary) { 
+ if (disks == 1) { 
+ System.out.println("Move disk 1 from " + source + " to " + 
+destination); 
+ return; 
+ } 
+ towersOfHanoi(disks - 1, source, auxiliary, destination); 
+ System.out.println("Move disk " + disks + " from " + source + " to 
+" + destination); 
+ towersOfHanoi(disks - 1, auxiliary, destination, source); 
+ } 
+ public static void main(String[] args) { 
+ Scanner scanner = new Scanner(System.in); 
+ int disks = 10; 
+ int towers = 3; 
+ System.out.println("Towers of Hanoi with " + disks + " disks and " 
++ towers + " towers:"); 
+ towersOfHanoi(disks, 'A', 'C', 'B'); 
+ scanner.close(); 
+ } 
+}
