@@ -1,0 +1,23 @@
+#Write a recursive program for the Fibonacci series and find the nth 
+Fibonacci number.
+import java.util.Scanner; 
+class Fibonacci { 
+ static int fib(int n) { 
+ if (n <= 1) 
+ return n; 
+ return fib(n - 1) + fib(n - 2); 
+ } 
+ public static void main(String args[]) { 
+ Scanner scanner = new Scanner(System.in); 
+ System.out.print("Enter the value of N: "); 
+ int N = scanner.nextInt(); 
+ System.out.println("Fibonacci series up to " + N + ":"); 
+ for (int i = 0; i < N; i++) { 
+ System.out.print(fib(i) + " "); 
+ } 
+ int nthFibonacci = fib(N); 
+ System.out.println("\nThe " + N + "th Fibonacci number is: " + 
+nthFibonacci); 
+ scanner.close(); 
+ } 
+}
